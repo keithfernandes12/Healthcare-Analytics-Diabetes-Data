@@ -8,10 +8,10 @@ The analysis merges five NHANES components into a single dataset of **9,813 part
 
 | Component | File | Key Variables Used |
 |-----------|------|--------------------|
-| **Laboratory** | `labs.csv` | LBXGH — Glycohemoglobin (%) |
-| **Examination** | `examination.csv` | BMXARMC — Arm Circumference (cm), BMDAVSAD — Avg. Sagittal Abdominal Diameter (cm), MGDCGSZ — Combined Grip Strength (kg) |
-| **Demographic** | `demographic.csv` | RIAGENDR — Gender, DMDYRSUS — Years in the US, INDFMPIR — Family Income-to-Poverty Ratio |
-| **Diet** | `diet.csv` | DRABF — Breast-fed indicator |
+| **Laboratory** | `labs.csv` | LBXGH - Glycohemoglobin (%) |
+| **Examination** | `examination.csv` | BMXARMC - Arm Circumference (cm), BMDAVSAD - Avg. Sagittal Abdominal Diameter (cm), MGDCGSZ - Combined Grip Strength (kg) |
+| **Demographic** | `demographic.csv` | RIAGENDR - Gender, DMDYRSUS - Years in the US, INDFMPIR - Family Income-to-Poverty Ratio |
+| **Diet** | `diet.csv` | DRABF - Breast-fed indicator |
 | **Questionnaire** | `questionnaire.csv` | Supporting survey data |
 
 All datasets are joined on `SEQN` (Respondent Sequence Number).
@@ -54,8 +54,8 @@ Six models are trained and evaluated:
 |-------|-------------|
 | **Linear Regression** | Baseline continuous regression model |
 | **AdaBoost** | Adaptive boosting with Decision Tree base estimators (100 estimators, learning rate 0.5) |
-| **Bagging — Decision Tree** | Bootstrap-aggregated Decision Trees (50% samples, 50% features) |
-| **Bagging — KNeighbors** | Bootstrap-aggregated KNN classifiers (50% samples, 50% features) |
+| **Bagging - Decision Tree** | Bootstrap-aggregated Decision Trees (50% samples, 50% features) |
+| **Bagging - KNeighbors** | Bootstrap-aggregated KNN classifiers (50% samples, 50% features) |
 | **Gradient Boosting** | Sklearn's GradientBoostingClassifier with default parameters |
 | **MLP Neural Network** | Multi-layer perceptron with hidden layers (1000, 300, 300), Adam optimizer |
 
@@ -67,10 +67,10 @@ Model accuracies are compared in a bar chart. Best performing models achieve ~88
 
 | Model | Test Accuracy |
 |-------|--------------|
-| Bagging — KNeighbors | 88.1% |
+| Bagging - KNeighbors | 88.1% |
 | MLP Neural Network | 88.1% |
 | Gradient Boosting | 87.4% |
-| Bagging — Decision Tree | 87.0% |
+| Bagging - Decision Tree | 87.0% |
 | AdaBoost | 86.5% |
 | Linear Regression | 72.9% |
 
